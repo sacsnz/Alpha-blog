@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.7'
@@ -31,6 +31,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+
+gem 'sqlite3', '~> 1.3.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
