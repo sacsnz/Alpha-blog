@@ -10,12 +10,13 @@ class UsersController < ApplicationController
    def new
       @user = User.new 
    end
+   
    def create
       @user = User.new(user_params)
       if @user.save
          session[:user_id]= @user.id
          flash[:success] = "Welcome to the Alpha Blog #{@user.username}"
-         redirect_to users_path(@user)
+         redirect_to user_path(@user)
       else
          render 'new'
       end
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
    end
    
    def show
-      @user_article = User.articles.paginate(page: params[:page], per_page: 5)
+      @user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
    end
    
    def destroy
